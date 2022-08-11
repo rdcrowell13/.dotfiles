@@ -3,8 +3,13 @@
 - Run macos to create symlinks
 	- macos -c to remove symlinks
 
-### Toolset
+### Current Tools
+- btop
+- docker
+- fzf
 - git
+- iterm2
 - neovim
 - oh-my-zsh
-- fzf
+- vscode
+- zsh
