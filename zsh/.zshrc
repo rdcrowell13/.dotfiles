@@ -104,3 +104,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# This is where I actually started adding my own config
+source ~/.zsh_profile
