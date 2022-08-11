@@ -7,3 +7,4 @@
 - git
 - neovim
 - oh-my-zsh
+- fzf
