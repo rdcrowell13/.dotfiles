@@ -2,3 +2,5 @@ export XDG_CONFIG_HOME=$HOME/.config
 VIM="nvim"
 
 export DOTFILES=$HOME/.dotfiles
+
+export PATH="/Users/rdcrowell13/.local/bin:$PATH"
