@@ -3,7 +3,11 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Colorscheme
-  use("gruvbox-community/gruvbox")
-  use("folke/tokyonight.nvim")
+--  use("gruvbox-community/gruvbox")
+--  use("folke/tokyonight.nvim")
+    use("joshdick/onedark.vim")
+
+
+  -- Plugins
 
 end)
