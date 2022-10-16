@@ -1,3 +1,10 @@
 [user]
 	name = rdcrowell13
 	email = rdcrowell13@gmail.com
+[core]
+    editor = editor
+    page = most
+[color]
+    ui = auto
+[merge] 
+    conflictstyle = diff3

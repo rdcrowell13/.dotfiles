@@ -1,0 +1,69 @@
+#!/usr/bin/env zsh
+
+arg0=$(basename "$0" .sh)
+blnk=$(echo "$arg0" | sed 's/./ /g')
+
+usage_info()
+{
+	echo "Usage: $arg0 [-h|--help] [-c|--clean]"
+}
+
+usage()
+{
+	exec 1>2 # Send standard output to standard error
+	usage_info
+	exit 1
+}
+
+error() 
+{
+	echo "$arg0: $*" >&2
+	exit 1
+}
+
+help() 
+{
+	usage_info
+	echo
+	echo " [-h|--help]			-- Print this help message and exit"
+	echo " [-c|--clean]			-- Clean environment and remove symlinks"
+	exit 0
+}
+
+flags()
+{
+	while test $# -gt 0
+	do 
+		case "$1" in
+		(-h|--help)
+		    help;;
+		(-c|--clean)
+		    export CLEAN_MODE=true
+		    shift;;
+		(*) usage;;
+	esac
+done
+}
+
+flags "$@"
+
+if [[ -z $STOW_FOLDERS ]]; then
+	STOW_FOLDERS="bin,nvim,fzf,git,arch_zsh"
+fi
+
+if [[ -z $DOTFILES ]]; then
+	DOTFILES=$HOME/.dotfiles
+
+fi
+
+export STOW_FOLDERS=$STOW_FOLDERS
+export DOTFILES=$DOTFILES
+
+if [[ $CLEAN_MODE = true ]];
+then
+    echo "Removing symlinks"
+    $DOTFILES/clean-env
+else
+    echo "Adding symlinks"
+    $DOTFILES/install
+fi
