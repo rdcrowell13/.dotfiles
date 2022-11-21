@@ -48,7 +48,7 @@ done
 flags "$@"
 
 if [[ -z $STOW_FOLDERS ]]; then
-	STOW_FOLDERS="bin,btop,docker,fzf,git,iterm2,nvim,oh-my-zsh,vim,vscode,zsh"
+	STOW_FOLDERS="bin,btop,docker,fzf,iterm2,nvim,oh-my-zsh,vim,vscode,zsh"
 fi
 
 if [[ -z $DOTFILES ]]; then
